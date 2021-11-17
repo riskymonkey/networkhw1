@@ -148,9 +148,11 @@ void conn_handler(int fd){
             cnt++;
             idx++;
         }
+        printf("==========================================\n");
         for(int i = 0; i < cnt; i++){
             printf("%s\n", *(data_storage + i));
         }
+        printf("==========================================\n");
         int data_fd = open("client_data.txt", O_RDWR|O_CREAT);
         for(int i = 0; i < cnt; i++){
             write(data_fd, *(data_storage + i), strlen(*(data_storage + i)));
